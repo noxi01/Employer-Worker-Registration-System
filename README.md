@@ -196,3 +196,5 @@ CREATE TABLE job_applications (
 ✅ 2. JSP Page: `job_list.jsp`.
 
 This lists jobs and shows an “Apply” button for each job. Add a check so only workers can access it.
+
+✅ 3. Servlet: `ApplyJobServlet.java`
