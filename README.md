@@ -106,4 +106,10 @@ Inserting user into the database
 
 Redirecting to login or dashboard
 
+🧩 Next Steps.
 
+Make sure your `web.xml` or annotations register this servlet.
+
+Test the form and ensure the data is inserted into the database.
+
+Add a `login.jsp` and LoginServlet.java next for authentication.
