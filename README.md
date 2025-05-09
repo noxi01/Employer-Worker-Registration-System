@@ -14,23 +14,52 @@ Workers can view jobs and apply.
 📁 Project Structure
 ```ruby
 EmployerWorkerSystem/
-├── src/
-│   ├── com.system.controllers/       → Servlets (RegisterServlet, LoginServlet, etc.)
-│   ├── com.system.dao/               → Database operations
-│   ├── com.system.model/             → POJOs (User, Job, etc.)
-│   └── com.system.utils/             → DB connection class
+├── 📁 src/
+│   └── 📁 com.system/
+│       ├── 📁 controllers/
+│       │   ├── LoginServlet.java
+│       │   ├── LogoutServlet.java
+│       │   ├── RegisterServlet.java
+│       │   ├── ApplyJobServlet.java
+│       │   ├── PostJobServlet.java
+│       │   ├── UpdateStatusServlet.java
+│       │   └── UploadResumeServlet.java (optional)
+│       ├── 📁 utils/
+│       │   └── DBUtil.java
+│       │   └── EmailUtility.java
+│       └── 📁 models/
+│           └── User.java
+│           └── Job.java
+│           └── Application.java
 │
-├── WebContent/
-│   ├── css/
-│   ├── js/
-│   ├── images/
-│   ├── jsp/
+├── 📁 WebContent/  (or webapp/)
+│   ├── 📁 css/
+│   │   └── style.css
+│   ├── 📁 js/
+│   │   └── app.js
+│   ├── 📁 uploads/        <-- Uploaded images/resumes go here
+│   ├── 📁 jsp/
+│   │   ├── login.jsp
+│   │   ├── register.jsp
 │   │   ├── employer_dashboard.jsp
 │   │   ├── worker_dashboard.jsp
-│   │   └── job_listings.jsp
-│   ├── index.jsp
-│   └── WEB-INF/
-│       └── web.xml
+│   │   ├── post_job.jsp
+│   │   ├── available_jobs.jsp
+│   │   ├── manage_applicants.jsp
+│   │   ├── worker_applied_jobs.jsp
+│   │   ├── profile.jsp
+│   │   └── error.jsp
+│   └── index.jsp
+│
+├── 📁 META-INF/
+├── 📁 WEB-INF/
+│   ├── web.xml
+│   └── lib/ (if not using Maven: put JDBC, JavaMail JARs here)
+│
+├── 📄 pom.xml (if using Maven)
+└── 📄 README.md
+
+ 
 ```
 🧾 Database Tables Example (MySQL/PostgreSQL).
 
@@ -284,3 +313,41 @@ If not using Maven, download `javax.mail` jar and add it to your project’s `li
 ✅ 3. Modify `UpdateStatusServlet.java` .
 
 After updating status in DB, fetch worker email and send email:
+
+✅ Key Features Included.
+
+User Registration & Login: Separate flows for employers and workers.
+
+Job Posting: Employers can post job listings.
+
+Job Application: Workers can apply to jobs.
+
+Application Status Management: Employers can update application statuses; workers can view them.
+
+Image Upload: Users can upload profile images during registration.
+
+Email Notifications: Workers receive emails upon status updates.
+
+🚀 Getting Started.
+
+Database Setup:
+
+Create a MySQL database named `employer_worker_system`.
+
+Execute the provided `schema.sql` script to create necessary tables.
+
+Configure Database Connection:
+
+Update `DBUtil.java` with your database URL, username, and password.
+
+Build and Deploy:
+
+If using Maven, run `mvn clean install`.
+
+Deploy the WAR file to your servlet container (e.g., Apache Tomcat).
+
+Access the Application:
+
+Navigate to `http://localhost:8080/EmployerWorkerSystem/` in your browser.
+
+📦 The Project Template
