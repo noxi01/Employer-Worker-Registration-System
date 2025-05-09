@@ -276,3 +276,7 @@ Create an `EmailUtility` class for reusable mail sending
 ✅ 1. Add JavaMail Dependency.
 
 If using Maven, add this to `pom.xml`:
+
+If not using Maven, download `javax.mail` jar and add it to your project’s `lib` folder.
+
+✅ 2. `EmailUtility.java` (Utility Class).
