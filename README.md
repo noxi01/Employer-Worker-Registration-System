@@ -247,3 +247,5 @@ String sql = "INSERT INTO job_applications (job_id, worker_id, status) VALUES (?
 
 ✅ 4. `UpdateStatusServlet.java`.
  
+✅ 5. `worker_applied_jobs.jsp` – Worker View,
+ 
