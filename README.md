@@ -249,3 +249,30 @@ String sql = "INSERT INTO job_applications (job_id, worker_id, status) VALUES (?
  
 ✅ 5. `worker_applied_jobs.jsp` – Worker View,
  
+✅ 6. Add Links in Dashboards.
+
+In `employer_dashboard.jsp` :
+```ruby
+<a href="manage_applicants.jsp">Manage Application Status</a>
+```
+
+*In `worker_dashboard.jsp` :
+```ruby
+<a href="worker_applied_jobs.jsp">My Applications</a>
+```
+
+🧩 Goal.
+
+When an employer changes the status of an application, the worker gets an automated email notification.
+
+✅ Steps:
+
+Configure JavaMail in your project
+
+Update `UpdateStatusServlet` to send an email after updating
+
+Create an `EmailUtility` class for reusable mail sending
+
+✅ 1. Add JavaMail Dependency.
+
+If using Maven, add this to `pom.xml`:
