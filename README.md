@@ -95,3 +95,15 @@ Use sessions to manage login state.
 Validate inputs both on client (JS) and server (Servlet).
 
 Show different dashboards for employer vs. worker.
+
+🔄 After Form Submission.
+
+The form will send data to your RegisterServlet, where you'll handle:
+
+Validating input
+
+Inserting user into the database
+
+Redirecting to login or dashboard
+
+
