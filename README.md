@@ -215,3 +215,33 @@ Display job title and list of workers who applied
 
 ✅ 1. JSP Page.
 
+✅ 2. Add Link in `employer_dashboard.jsp`:
+```ruby
+<a href="view_applicants.jsp">View Applicants</a>
+```
+
+🧩 What's Included:
+
+Update the `job_applications` table to include a `status` field
+
+Modify the ApplyJobServlet to set default status
+
+Create a JSP page for employers to update application status
+
+Create a JSP page for workers to view their applied jobs with status
+
+✅ 1. Update job_applications Table.
+
+Run this SQL to add a status column:
+```ruby
+ALTER TABLE job_applications ADD COLUMN status VARCHAR(20) DEFAULT 'Pending';
+```
+
+✅ 2. Modify `ApplyJobServlet.java`
+
+Add this line when inserting application:
+```ruby
+String sql = "INSERT INTO job_applications (job_id, worker_id, status) VALUES (?, ?, 'Pending')";
+```
+✅ 3. JSP: `manage_applicants.jsp` (Employer View)
+
