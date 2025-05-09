@@ -280,3 +280,7 @@ If using Maven, add this to `pom.xml`:
 If not using Maven, download `javax.mail` jar and add it to your project’s `lib` folder.
 
 ✅ 2. `EmailUtility.java` (Utility Class).
+
+✅ 3. Modify `UpdateStatusServlet.java` .
+
+After updating status in DB, fetch worker email and send email:
