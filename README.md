@@ -198,3 +198,10 @@ CREATE TABLE job_applications (
 This lists jobs and shows an “Apply” button for each job. Add a check so only workers can access it.
 
 ✅ 3. Servlet: `ApplyJobServlet.java`
+
+✅ 4. Add Link to Job List (from dashboard).
+
+On `worker_dashboard.jsp`, link to the job listing:
+```ruby
+<a href="job_list.jsp">Browse Jobs</a>
+```
