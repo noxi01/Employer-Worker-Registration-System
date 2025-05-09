@@ -205,3 +205,13 @@ On `worker_dashboard.jsp`, link to the job listing:
 ```ruby
 <a href="job_list.jsp">Browse Jobs</a>
 ```
+🧩 Feature Overview.
+
+JSP page: `view_applicants.jsp`
+
+Fetch applicants for jobs posted by the logged-in employer
+
+Display job title and list of workers who applied
+
+✅ 1. JSP Page.
+
