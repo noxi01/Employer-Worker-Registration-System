@@ -115,3 +115,46 @@ Test the form and ensure the data is inserted into the database.
 Add a `login.jsp` and LoginServlet.java next for authentication.
 
 🔐 Optional: Secure with Session Filters.
+
+🧩 How to Use.
+
+In your dashboard pages (e.g. employer_dashboard.jsp, worker_dashboard.jsp), include a logout link:
+
+```ruby
+<a href="../LogoutServlet">Logout</a>
+```
+
+🛡️ Optional: Session Check Snippet in JSP.
+
+To protect pages from unauthorized access, add this at the top of protected JSPs:
+```ruby
+<%
+  String user = (String) session.getAttribute("username");
+  if (user == null) {
+      response.sendRedirect("../login.jsp");
+  }
+%>
+```
+🧩 Let's implement the Job Posting feature for employers in your system.
+
+This feature will include:
+
+A JSP form `(post_job.jsp)` to enter job details
+
+A Servlet `(PostJobServlet.java)` to handle form submission
+
+A MySQL table to store job posts.
+
+✅ 1. Create the jobs Table.
+
+Make sure your database has this table:
+```ruby
+CREATE TABLE jobs (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(255) NOT NULL,
+    description TEXT,
+    employer_id INT NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (employer_id) REFERENCES users(id)
+);
+```
