@@ -158,3 +158,41 @@ CREATE TABLE jobs (
     FOREIGN KEY (employer_id) REFERENCES users(id)
 );
 ```
+✅ 2. JSP Form:
+✅ 3. Servlet:
+
+🔧 IMPORTANT – Track userId on Login.
+Update your LoginServlet to store the user's ID:
+```ruby
+int userId = rs.getInt("id");
+session.setAttribute("userId", userId);
+```
+
+🧩 Overview,
+
+This will include:
+
+A job listing JSP for workers
+
+A button/form to apply for a job
+
+A new database table to store applications
+
+An `ApplyJobServlet` to handle applications
+
+✅ 1. Create job_applications Table.
+
+In your MySQL database:
+```ruby
+CREATE TABLE job_applications (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    job_id INT NOT NULL,
+    worker_id INT NOT NULL,
+    applied_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (job_id) REFERENCES jobs(id),
+    FOREIGN KEY (worker_id) REFERENCES users(id)
+);
+```
+✅ 2. JSP Page: `job_list.jsp`.
+
+This lists jobs and shows an “Apply” button for each job. Add a check so only workers can access it.
