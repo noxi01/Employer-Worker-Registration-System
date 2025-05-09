@@ -243,5 +243,7 @@ Add this line when inserting application:
 ```ruby
 String sql = "INSERT INTO job_applications (job_id, worker_id, status) VALUES (?, ?, 'Pending')";
 ```
-✅ 3. JSP: `manage_applicants.jsp` (Employer View)
+✅ 3. JSP: `manage_applicants.jsp` (Employer View).
 
+✅ 4. `UpdateStatusServlet.java`.
+ 
